@@ -1,0 +1,19 @@
+  <h2>LIST DEVICES</h2>
+  <p >Date de mise à jour : {{lastUpdate |async }}</p>
+  <app-device *ngFor="let device of devices; let i = index"
+              [indexOfDevice]="i"
+              [deviceName]  = "device.name"
+              [deviceStatus]= "device.status"
+              [id]="device.id">
+  </app-device>
+<div>
+  <button class="btn btn-success" [disabled]="!isAuth" (click)="switchOnAll()"><em class="fa fa-fire"></em> Switch on all </button>
+  <button class="btn btn-danger " (click)="switchOffAll()" > <em class="fa fa-fire-extinguisher"></em> Switch Of all </button>
+  <button class="btn btn-success " (click)="onSave()" >
+          <em class="fa fa-save"></em> Save device
+  </button>
+  <button class="btn btn-primary" (click)="OnFetch()" >
+    <em class="fa fa-save"></em> Load Devices
+  </button>
+</div>
+

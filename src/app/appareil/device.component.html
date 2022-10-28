@@ -1,0 +1,47 @@
+<li [ngClass]="{'list-group-item':true,
+                'list-group-item-success': deviceStatus === 'On',
+                'list-group-item-danger' : deviceStatus === 'Off'}">
+  <!--<div style="width: 20px; height: 20px; background-color: red"
+       *ngIf="deviceStatus === 'Off'">
+       </div>-->
+  <h5 [ngStyle]="{color: getColor()}"> Device : {{deviceName}}  ---- Status : {{deviceStatus}}</h5>
+  <input type="text" class="form-control" [(ngModel)]="deviceStatus">
+  <a [routerLink]="[id]">Detail  </a>
+  <button class="btn btn-success"
+          (click)="switchOnOne()" [disabled]="deviceStatus==='On'">
+         <em class="fa fa-fire"></em> Switch on One
+  </button>
+  <button class="btn btn-danger"
+          (click)="switchOffOne()" [disabled]="deviceStatus==='Off'">
+        <em class="fa fa-fire-extinguisher "></em> Switch Off One
+  </button>
+</li>
+<!--<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>APPAREIL</th>
+    <th>STATUT</th>
+    <th>MODIFIER</th>
+    <th>SUPPRIMER</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let app of appareil">
+    <td>{{app.name}}</td>
+    <td>{{app.status}}</td>
+    <td><a routerLink="/update/" class="btn btn-success"><em class="fa fa-pencil-square"></em></a></td>
+    <td><a routerLink="/delete/}" class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+    <td><a routerLink="/delete/" class="btn btn-info"><em class="fa fa-eye"></em></a></td>
+   <td > <div style="width: 20px; height: 20px; background-color: red;" *ngIf="app.status === 'Etteint'"></div> </td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <input type="text" class="form-control" [(ngModel)]="appareilName" >
+  <br>
+  Bonjour appareil {{appareilName}}
+</div>
+
+</div>-->
+

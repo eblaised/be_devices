@@ -1,0 +1,15 @@
+<button routerLink="/new-user" class="btn btn-info"> <em class="fa fa-user-plus"></em> Add New user </button>
+<!--<a routerLink="/new-user">New user</a> -->
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of users">
+    <h3>{{user.firstName}} {{user.lastName}}</h3>
+    <p>{{user.email}}</p>
+    <p>This person prefers {{user.drinkPreference}}</p>
+    <!-- If this user has at least 1 hobby, we display them-->
+    <p *ngIf="user.hobbies && user.hobbies.length > 1">
+       <span *ngFor="let hobby of user.hobbies">
+         {{hobby}} -
+       </span>
+    </p>
+  </li>
+</ul>
