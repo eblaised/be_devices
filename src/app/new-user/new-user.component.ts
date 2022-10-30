@@ -22,7 +22,7 @@ export class NewUserComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.InitForm();
+    this.initForm();
   }
 
   /**
@@ -30,7 +30,7 @@ export class NewUserComponent implements OnInit {
    * Add Validators import to validate fields form
    * @constructor
    */
-  InitForm(){
+  initForm(){
     this.userForm = this.formBuilder.group({
       firstName      : ['', Validators.required],
       lastName       : ['', Validators.required,],

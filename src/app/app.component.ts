@@ -3,6 +3,7 @@ import {Observable, interval, Subscription} from "rxjs";
 import {ToastrService} from "ngx-toastr";
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +13,8 @@ export class AppComponent implements OnInit, OnDestroy{
   seconds : number | undefined  ;
   counterSubscription: Subscription | undefined;
 
-constructor(private toastr: ToastrService) {}
+constructor(private toastr: ToastrService) {
+}
 
   ngOnInit(): void {
   const counter = interval(1000);

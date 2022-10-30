@@ -1,5 +1,6 @@
   <h2>LIST DEVICES</h2>
   <p >Date de mise à jour : {{lastUpdate |async }}</p>
+
   <app-device *ngFor="let device of devices; let i = index"
               [indexOfDevice]="i"
               [deviceName]  = "device.name"

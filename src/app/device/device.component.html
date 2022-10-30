@@ -26,7 +26,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor = "let app of appareil">
+  <tr *ngFor = "let app of device">
     <td>{{app.name}}</td>
     <td>{{app.status}}</td>
     <td><a routerLink="/update/" class="btn btn-success"><em class="fa fa-pencil-square"></em></a></td>
@@ -40,7 +40,7 @@
 <div>
   <input type="text" class="form-control" [(ngModel)]="appareilName" >
   <br>
-  Bonjour appareil {{appareilName}}
+  Bonjour device {{appareilName}}
 </div>
 
 </div>-->
