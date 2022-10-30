@@ -13,7 +13,7 @@ export class DeviceViewComponent implements OnInit {
   isAuth = false;
   lastNamePValue ='Usman Monkey';
   agePValue = 400;
-  deviceSubscription: Subscription|any;
+  deviceSubscription: Subscription;
 
   lastUpdate = new  Promise(
     (resolve, reject)=> {
@@ -56,9 +56,9 @@ export class DeviceViewComponent implements OnInit {
   }
   ngOnInit(): void {
     //this.devices = this.deviceService.devices;
-    this.deviceSubscription =this.deviceService.deviceSubject.subscribe(
+    this.deviceSubscription = this.deviceService.deviceSubject.subscribe(
       (devices:any[]) =>{
-        this.devices=devices;
+        this.devices = devices;
       }
     );
     this.deviceService.emitDeviceSubject();

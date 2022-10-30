@@ -1,10 +1,13 @@
+
 <nav class="navbar navbar-nav">
   <div class="container-fluid">
       <ul class="nav navbar-nav">
+         <li routerLinkActive="true"><a routerLink="about">About us</a></li>
          <li routerLinkActive="true"><a routerLink="auth">Sign In</a></li>
          <li routerLinkActive="true"><a routerLink="devices">Devices List</a></li>
-        <li routerLinkActive="true"><a routerLink="edit">Add Device</a></li>
-        <li routerLinkActive="true"><a routerLink="users">List Users</a></li>
+         <li routerLinkActive="true"><a routerLink="edit">Add Device</a></li>
+         <li routerLinkActive="true"><a routerLink="users">List Users</a></li>
+        <li routerLinkActive="true"><a routerLink="offers">List Offers</a></li>
       </ul>
   </div>
 </nav>
@@ -16,9 +19,10 @@
   <router-outlet></router-outlet>
 </div>
 
+
 <!--<div class="panel panel-default">
   <div class="panel-body">Panel Content
-  <app-appareil> </app-appareil>
+  <app-device> </app-device>
   </div>
   <button class="btn btn-success" [disabled]="!isAuth">Tout allumer</button>
   <div class="panel-footer">Panel Footer</div>

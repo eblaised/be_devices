@@ -1,11 +1,12 @@
 import {Subject} from 'rxjs'
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class DeviceService {
   deviceSubject = new Subject<any[]>();
-  private baseUrl ='https://bedevice-c7f4c-default-rtdb.firebaseio.com';
+  //private baseUrl ='https://bedevice-c7f4c-default-rtdb.firebaseio.com';
 
  private devices = [
               {id:1, name : 'Washing machine', status : 'On'},
@@ -90,7 +91,7 @@ export class DeviceService {
   }
 
   saveDeviceToServer(){
-    this.http.put(this.baseUrl+'/devices.json', this.devices)
+    this.http.put(environment.baseUrl+'/devices.json', this.devices)
       //.subscribe((data)=>console.log(data))
       .subscribe({
           next:     (v) => console.log(v),
@@ -110,14 +111,13 @@ export class DeviceService {
   }*/
 
   getDevicesFromServer(){
-    this.http.get<any>(this.baseUrl)
-      .subscribe(
-        (response)=>{
+    this.http.get<any>(environment.baseUrl)
+      .subscribe({
+        next: (response) =>{
           this.devices=response;
           this.emitDeviceSubject();
         },
-        (error)=>{
-          console.log('Loading data from server '+ error);
+       error: (error)=> console.log('Loading data from server '+ error)
         }
       );
   }

@@ -1,0 +1,37 @@
+<div>
+  <button routerLink="/new-offer" class="btn btn-info"> <em class="fa fa-user-plus"></em> Add New Offer </button>
+</div>
+
+<div class="container spacer">
+  <form class="form-inline waves-light">
+    <div class="card">
+     <!-- <input class="form-control mr-sm-2 style" type="text" (keyup)="searchByType ($event)"
+             placeholder="Rechercher par type"> -->
+      <div class="card-header style"><strong> LIST OF THE OFFERS </strong>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>View</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+
+          <tr *ngFor="let offer of offers">
+
+            <td>{{offer.title}}</td>
+            <td>{{offer.description}}</td>
+
+            <td><a routerLink="/view/{{offer.title}}" class="btn btn-info"><em class="fa fa-eye"></em></a></td>
+            <td><a routerLink="/update/{{offer.title}}" class="btn btn-success"><em class="fa fa-pencil-square"></em></a></td>
+            <td><a routerLink="/delete/{{offer.title}}" class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </form>
+</div>
